@@ -8,7 +8,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#35fa4f",
+    "navigationBarBackgroundColor": "#white",
     "navigationBarTitleText": "最后一公里",
     "navigationBarTextStyle": "black"
   },
