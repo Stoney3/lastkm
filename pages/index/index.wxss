@@ -1,0 +1,71 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128px;
+  height: 128px;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+button{
+  position:relative;
+display:block;
+margin-left:auto;
+margin-right:auto;
+padding-left:14px;
+padding-right:14px;
+box-sizing:border-box;
+font-size:18px;
+text-align:center;
+text-decoration:none;
+line-height:2.55555556;
+border-radius:5px;
+-webkit-tap-highlight-color:transparent;
+overflow:hidden;
+color:#000000;
+background-color:#F8F8F8;
+}
+.enter{
+  margin-top:50%;
+  color:#FFFFFF;
+  background-color:#1AAD19;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.infor{
+  margin-top: 5px;
+}
+#switchTip{
+  font-size: 34rpx;
+  color: black;
+}
+/*swtich样式-start*/
+/*swtich整体大小*/
+.wx-switch-input{
+width:82rpx !important;
+height:40rpx !important;
+border: 1px solid;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+width:80rpx !important;
+height: 36rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+width: 36rpx !important;
+height: 36rpx !important;
+}
+/*swtich样式end*/
