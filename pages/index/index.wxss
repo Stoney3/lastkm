@@ -44,7 +44,7 @@ background-color:#F8F8F8;
   padding-left: 25px;
   padding-right: 25px;
 }
-.infor{
+.tip{
   margin-top: 5px;
 }
 #switchTip{

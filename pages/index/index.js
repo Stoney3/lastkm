@@ -5,9 +5,10 @@ const app = getApp()
 Page({
   data: {
     userInfo: {},
-    hasUserInfo: false,
+    hasUserInfo: true,
     switchInfor: "switchInfor",
     switchTip: "switchTip",
+    switchPitchValue: true,
     false: "false",
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -54,8 +55,21 @@ Page({
     })
   },
   toOrder: function(){
+    if (this.data.switchPitchValue) {
+      wx.navigateTo({
+        url: '../order/order'
+      })
+    }
+    else {
+      console.log("请先阅读用户须知后再进行操作。")
+    }
+  },
+  toAgreement: function(){
     wx.navigateTo({
-      url: '../order/order'
+      url: '../infor/infor'
     })
+  },
+  switchChange: function(){
+    this.data.switchPitchValue = !this.data.switchPitchValue
   }
 })

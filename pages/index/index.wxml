@@ -11,11 +11,8 @@
     <button class="enter" disabled="{{disabled}}" bindtap="toOrder">最后一公里</button>
   </view>
   <view class="tip">
-    <navigator class="infor" url="pages/infor/infor" hover-class="none">
-      <switch id="{{switchInfor}}"checked="{{false}}">
-      <text id="{{switchTip}}">用户须知</text>
+      <switch id="{{switchInfor}}"checked="{{true}}" bindchange= "switchChange">
+      <text id="{{switchTip}}" bindtap='toAgreement'>用户须知</text> 
       </switch>
-      
-    </navigator>
   </view>
 </view>
