@@ -10,9 +10,17 @@
   <view class="express">
     <button class="enter" disabled="{{disabled}}" bindtap="toOrder">最后一公里</button>
   </view>
-  <view class="tip">
-      <switch id="{{switchInfor}}"checked="{{true}}" bindchange= "switchChange">
-      <text id="{{switchTip}}" bindtap='toAgreement'>用户须知</text> 
-      </switch>
-  </view>
+  <!--<view class="tip">-->
+      <checkbox-group bindchange="bindAgreeChange">
+            <label class="weui-agree" for="weuiAgree">
+                <view class="weui-agree__text">
+                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                    <view class="weui-agree__checkbox-icon">
+                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                    </view>
+                    阅读并同意<navigator url="" class="weui-agree__link">《用户须知》</navigator>
+                </view>
+            </label>
+        </checkbox-group>
+  <!--</view>-->
 </view>
