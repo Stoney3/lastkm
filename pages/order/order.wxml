@@ -1,3 +1,92 @@
 <!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
-<button class="weui-btn mini-btn" type="primary" size="mini">你好</button>
+<view>
+  <!--默认地址 -->
+  <navigator url="../edit/edit?name={{defaultAddress.name}}&phone={{defaultAddress.phone}}&college={{defaultAddress.college}}&branch={{defaultAddress.branch}}&apartment={{defaultAddress.apartment}}&room={{defaultAddress.room}}" wx:if="{{isDefault}}">
+    <view class="default_address">
+      <view><image class="default_address_icon" src="../../images/cartlocation.png"></image></view>
+      <view class="default_address_info">
+        <view>
+          <view class="default_address_school inline_block">{{defaultAddress.college}}{{defaultAddress.branch}}</view><view class="default_address_room inline_block">{{defaultAddress.apartment}}#{{defaultAddress.room}}</view>
+        </view>
+        <view class="default_address_person inline_block">{{defaultAddress.name}}</view>
+        <view class="default_address_phone inline_block">{{defaultAddress.phone}}</view>
+      </view>
+      <view><image class="default_address_arrow" src="../../images/cartright.png"></image></view>
+    </view>
+  </navigator>
+  <!--添加地址-->
+  <navigator url="../edit/edit" wx:else>
+    <view class="add_address">
+      <view><image class="default_address_icon" src="../../images/cartlocation.png"></image></view>
+      <view class="add_address_content">{{add_address_content}}</view>
+      <view><image class="default_address_arrow" src="../../images/cartright.png"></image></view>
+    </view>
+  </navigator>
+  
+  <!--订单详细内容-->
+  <form bindsubmit="formSubmit">
+  <view class="order">
+    <view class="order_content">
+      <view class="order_image">
+       <view class="uploader_tip">请上传快递短信</view>
+       <view class="weui-uploader__input-box" id="input_box" bindtap="chooseImage" bindlongtap='previewImage'><view class="weui-uploader__input" id="uploader_input"></view><image src="{{files}}" mode="aspectFill" class="weui-uploader__img" id="express_image"></image></view>
+      </view>
+      <view class="order_info">
+        <view class="order_info_row">
+        <radio-group name ="volume" class="radio_cell" bindchange="isEnough">
+        大小:
+        <radio value='1'>小件</radio>
+        <radio value='2'>中件</radio>
+        <radio value='3'>大件</radio>
+        </radio-group>
+        </view>
+        <!--快递公司-->
+        <view wx:if="{{!show_pro_code}}" class="order_info_row" >
+        <radio-group  class="radio_cell" bindchange="show_pro_code" name="company">
+        快递:
+        <radio value='1'>菜鸟</radio>
+        <radio value='2'>顺丰</radio>
+        <radio value='3'>京东</radio>
+        </radio-group>
+        </view>
+        <!--end-->
+        <view class="order_info_row order_code" wx:if="{{show_pro_code}}">
+          取件码:
+          <input name="code_pre" class="product_code_pre" maxlength='2' type='number' confirm-type="next" value="{{pre_value}}" bindinput='inputPre'>
+          </input>-<input name="code_mid" class="product_code_mid" maxlength='1' type='number'confirm-type="next" focus="{{focus_mid}}" value="{{mid_value}}" bindinput='inputMid'>
+          </input>-<input name="code_post" class="product_code_post" maxlength='4' type='number' focus="{{focus_post}}" value="{{post_value}}" bindinput="inputPost">
+          </input>   
+        </view>
+        <view class="order_info_row">
+        <picker name="target_date" class="date_icker_cell" mode="date" value="{{target_date}}" start="{{start_date}}" end="{{end_date}}" bindchange="dateChange"> 送货日期:
+        <view class="target_date_input inline_block">{{target_date}}</view>
+        </picker>
+        </view>
+        <view class="order_info_row">
+        <picker name="target_time" class="time_picker_cell" range="{{target_time_array}}" value="{{target_time_index}}" bindchange='timeChange'>
+        送货时间:
+        <view class="target_time_input inline_block">{{target_time_array[target_time_index]}}</view>
+        </picker>
+        </view>
+      </view>
+    </view>
+    <view class="order_cost">
+      <view class="order_cost_content">
+      <view class="ticket_word">消耗:</view>
+      <view>{{need_pieces}}张</view>
+      <view><image class="ticket_image" src="../../images/ticket.png"></image></view>
+      </view>
+    </view>
+  </view>
+  <view class="order_have_cell">
+    <view class="order_have">
+    <view class="order_have_word">您现有共享券: {{ticket_num}}张</view>
+    <view class="order_buy_cell"><button wx:if="{{button_show}}" class="order_buy_btn" size="mini" bindtap='toBuy'>{{button_word}}</button></view>
+    </view>
+  </view>
+  <!--微信支付按钮-->
+  <view class="order-btn-pay">
+    <button form-type='submit'>确认下单</button>
+  </view>
+  </form>
+</view>

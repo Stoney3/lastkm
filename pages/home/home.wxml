@@ -1,2 +1,66 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="out_cell">
+  <view class="user_info">
+    <view class="user_wx" bindtap="toControl">
+      <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="user_avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <image wx:else class="user_avatar" src="../../images/user.png"></image>
+      <text wx:if="{{userInfo && userInfo.avatarUrl}}"  class="user_nick_name">{{userInfo.nickName}}</text>
+      <text wx:else class="user_nick_name">北化学子</text>
+    </view>
+    <view class="user_other">
+    <view wx:if="{{isApprove > 0}}" class="user_approve"><view><image class="user_approve_image" src="../../images/hadApprove.png"></image></view><view class="user_approve_text">已认证</view></view>
+      <view wx:else class="user_approve"><image class="user_approve_image" src="../../images/notApprove.png"></image><view class="user_approve_text">未认证</view></view>
+    
+    <view class="user_tickets">
+      <image class="user_tickets_image" src="../../images/ticket.png"></image>
+      <view class="user_tickets_text">{{hasTickets}}张</view>
+    </view>
+    </view>
+  </view>
+  <view class="my_items">
+  <view class="my_item" id="my_item_order_bottom" bindtap="toPlaceOrder">
+  <navigator class="every_item_navigator">我的订单</navigator>
+  <image class="every_item_image" src="../../images/home_arrow.png"></image>
+  </view>
+  <view class="my_progress">
+    <navigator class="my_progress_nav" url="../place_order/place_order?activeIndex=0">
+      <image class ="my_progress_imgae" src="../../images/start.png"></image><view class="my_progress_text">待领取</view>
+    </navigator>
+    <navigator class="my_progress_nav" url="../place_order/place_order?activeIndex=1">
+      <image class ="my_progress_imgae" src="../../images/send.png"></image><view class="my_progress_text">待送达</view>
+    </navigator>
+    <navigator class="my_progress_nav" url="../place_order/place_order?activeIndex=2">
+      <image class ="my_progress_imgae" src="../../images/arrive.png"></image><view class="my_progress_text">待签收</view>
+    </navigator>
+    <navigator class="my_progress_nav" url="../place_order/place_order?activeIndex=3">
+      <image class ="my_progress_imgae" src="../../images/end.png"></image><view class="my_progress_text">已完成</view>
+    </navigator>
+  </view>
+  </view>
+  <view class="other_items">
+  <view class="my_item" bindtap="toSharingTicket">
+  <navigator class="every_item_navigator">券数情况</navigator>
+  <image class="every_item_image" src="../../images/home_arrow.png"></image>
+  </view>
+  <view class="my_item" bindtap="toApprove">
+  <navigator class="every_item_navigator">实名认证</navigator>
+  <image class="every_item_image" src="../../images/home_arrow.png"></image>
+  </view>
+  <view class="my_item" bindtap="toWantOrder">
+  <navigator class="every_item_navigator">我要代取</navigator>
+  <image class="every_item_image" src="../../images/home_arrow.png"></image>
+  </view>
+  <view class="my_item" bindtap="toCollectOrder">
+  <navigator class="every_item_navigator">代取情况</navigator>
+  <image class="every_item_image" src="../../images/home_arrow.png"></image>
+  </view>
+  <view class="my_item" id="my_item_address_bottom" bindtap="toEdit">
+  <navigator class="every_item_navigator">发货地址</navigator>
+  <image class="every_item_image" src="../../images/home_arrow.png"></image>
+  </view>
+  </view>
+  <view class="service" bindtap="toService">
+  <image class="service_image" src="../../images/phone.png"></image>
+  <view class="service_word">联系客服</view>
+  </view>
+</view>

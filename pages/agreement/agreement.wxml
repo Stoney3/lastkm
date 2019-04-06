@@ -1,2 +1,2 @@
 <!--pages/agreement/agreement.wxml-->
-<text>pages/agreement/agreement.wxml</text>
+<text class="agreement">{{agreement}}</text>

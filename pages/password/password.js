@@ -1,11 +1,12 @@
-// pages/create_code/create_code.js
+// pages/password/password.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    password: ''
   },
 
   /**
@@ -62,5 +63,38 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  inputPassword: function(res) {
+    this.setData({
+      password: res.detail.value
+    })
+  },
+  toControl: function() {
+    var that = this
+    wx.request({
+      url: app.globalData.globalUrl+'check_password.php',
+      data: {
+        password: that.data.password
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success(res) {
+        console.log(res)
+        if (res.data == 1) {
+          wx.navigateTo({
+            url: '../control/control'
+          })
+        } else {
+          wx.showModal({
+            title: '错误提示',
+            content: '您输入的密码有误',
+            showCancel: false
+        
+          })
+        }
+      }
+    })
   }
 })

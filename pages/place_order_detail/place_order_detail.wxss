@@ -1,0 +1,27 @@
+/* pages/place_order_detail/place_order_detail.wxss */
+
+.whole_itme{
+  height: 100%;
+  background-color: white;
+
+}
+
+.item {
+  display: flex;
+  padding-top: 10rpx;
+  padding-left: 20px;
+  padding-right: 10rpx;
+  padding-bottom: 10rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+}
+.item_title {
+  height: 60rpx;
+  width: 160rpx;
+}
+
+.item_btn {
+  margin-top: 60rpx;
+  margin-left: 10%;
+  margin-right: 10%;
+}

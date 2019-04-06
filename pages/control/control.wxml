@@ -1,0 +1,55 @@
+<!--pages/control/control.wxml-->
+<view class="whole">
+  <view class="nav_bar">
+    <view class="nav_item">
+      <view class="nav_title">总订单数</view>
+      <view class="nav_content">{{nav_contents[0]}}</view>
+    </view>
+    <view class="nav_item">
+      <view class="nav_title">上午</view>
+      <view class="nav_content">{{nav_contents[1]}}</view>
+    </view>
+    <view class="nav_item">
+      <view class="nav_title">下午</view>
+      <view class="nav_content">{{nav_contents[2]}}</view>
+    </view>
+  </view>
+  <view class="control">
+    <view class="control_cell">
+      <view class="ticket_value">金额:</view>
+      <view class="ticker_value_input"><input bindinput="input_buy_value">{{buy_value}}</input></view>
+      <view class="convert_code">兑换码:
+        <text selectable='true'>{{buy_code}}</text>
+      </view>
+      <button size="mini" type="primary" bindtap="make_buy_code">获取</button>
+    </view>
+    <view class="control_cell"> 
+      <view class="ticket_value">金额:</view>
+      <view class="ticker_value_input"><input bindinput="input_free_value">{{free_value}}</input></view>
+      <view class="convert_code">兑换码:
+        <text selectable='true'>{{free_code}}</text>
+      </view>
+      <button size="mini" type="default" bindtap="make_free_code">其他</button>
+    </view>
+    <view class="control_cell">
+      <view class="control_word">订单查询:</view>
+      <picker class="order_picker" mode="date" value="{{order_date}}" bindchange="orderDateChange">{{order_date}}</picker>
+      <picker class="order_picker" mode="selector" range="{{times}}" bindchange='timesChange'>{{time}}</picker>
+      <button type="primary" size="mini" bindtap="inquire_order">查询</button>
+    </view>
+    <view class="control_cell">
+      <view class="control_word">客户查询:</view>
+      <view class="inquire_user_input"><input class="user_name" bindinput="inputUserName">{{user_name}}</input></view>
+      <button type="primary" size="mini" bindtap="inquire_user">查询</button>
+    </view>
+    <view class="salary_cell">
+      <view class="salary_word">工资查询:</view>
+      <view class="salary_content">
+        <input class="salary_name" bindinput="inputSalaryName">{{salary_name}}</input>
+        <picker class="salary_picker" mode="date" value="{{start_date}}" bindchange="startDateChange">{{start_date}}</picker>
+        <picker class="salary_picker" mode="date" value="{{end_date}}" bindchange="endDateChange">{{end_date}}</picker>
+        <button type="primary" size="mini" bindtap="inquire_salary">查询</button>
+      </view>
+    </view>
+  </view>
+</view>

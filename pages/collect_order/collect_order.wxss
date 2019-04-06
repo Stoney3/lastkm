@@ -1,1 +1,63 @@
-/* pages/collect_order/collect_order.wxss */
+/* pages/place_order/place_order.wxss */
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 17px;
+    text-align: center;
+}
+.navbar_num {
+  font-size: 24rpx;
+}
+.order_item {
+  display: flex;
+  padding-top: 7rpx;
+  padding-bottom: 7rpx;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  /*border-bottom: 2rpx solid #32cd32;控制每个子项目的下划线*/
+}
+
+.item_image {
+  width: 60px;
+  height: 65px;
+}
+.item_content {
+  flex: 4;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  margin-left: 10px;
+  display: flex;
+  font-size: 28rpx;
+}
+.first_clomun {
+  margin-right: 10rpx;
+}
+.item_content_time{
+  text-align: left;
+  color: #A9A9A9;
+  font-family: 'Times New Roman', Times, serif;
+}
+.item_content_code{
+  text-align: left;
+  color:#696969;
+  font-family: PMingLiU;
+}
+
+.item_content_user {
+  text-align: left;
+  color: #000000;
+  font-family: PMingLiU;
+
+}
+#double_btn {
+  display: flex;
+  flex-direction: column;
+}
+#get {
+  margin-top: 7px;/*为了消除we-ui自带的margin-top的影响*/
+}

@@ -1,1 +1,132 @@
 /* pages/home/home.wxss */
+page {
+  background-color: #f2f2f2;
+  font-size: 32rpx;
+}
+.user_info {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  border-bottom: 2rpx solid #eee;
+  background-color: #fff;
+}
+
+.user_wx {
+  margin: 24rpx;
+}
+.user_nick_name {
+  display: block;     /*将昵称换行*/
+  text-align: center;
+}
+/*  微信头像  */
+.user_avatar {
+	width: 160rpx;      
+	height: 160rpx;
+  border-radius: 50%;
+}
+.user_nick_name {
+  font-size: 14px;
+}
+
+/*  认证信息和共享券  */
+.user_other {
+  margin-top: 80rpx;  /*控制未认证和券的高低*/
+  margin-left: 24rpx;
+}
+
+.user_approve {
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;  /*控制认证信息和共享券的距离*/
+  display: flex;
+}
+.user_approve_image,.user_tickets_image{
+  display: inline-block;  /*为了让文字与图像处于一级*/
+  margin-top:8rpx;        /*为了让文字与图像等高*/
+  margin-right: 4rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.user_tickets {
+  display: flex;
+  align-items: flex-start;
+}
+.user_approve_text {
+  /*认证文字颜色*/
+}
+.user_tickets_text {
+  /*共享券文字贪色*/
+}
+
+.my_items {
+  width: 100%;
+  margin-top: 10rpx;
+  border-top: solid, #eee, 2rpx;
+  background-color: #fff;
+}
+
+.my_item {
+  margin-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 13rpx;
+  padding-bottom: 13rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid #eee 2rpx;
+}
+.every_item_navigator {
+  text-align: top;
+}
+.every_item_image {
+  margin-top: 13rpx;        /*控制箭头和文字等高*/
+  height: 25rpx;
+  width: 18rpx;
+}
+
+.my_progress {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border-bottom: solid #eee 2rpx;
+}
+.my_progress_nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 23rpx;
+}
+.my_progress_imgae {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.other_items {
+  margin-top: 10rpx;
+  background-color: #fff;
+  border-bottom: #eee solid 2rpx;
+  border-top:  #eee solid 2rpx;
+}
+
+#my_item_address_bottom{
+  border-bottom: #fff solid 2rpx;/*控制发货地址下面的横线不受上面影响*/
+}
+
+/*  联系客服  */
+.service {
+  margin-top:20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service_image {
+  height: 30rpx;
+  width: 30rpx;
+  margin-left: 5rpx;
+}
+.service_word {
+  font-size: 25rpx;
+  color: #32cd32;
+}

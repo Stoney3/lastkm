@@ -1,15 +1,31 @@
 //app.js
+const app = getApp()
 App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    var that = this
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        var code = res.code;//发送给服务器的code
+        if (code) {
+          wx.request({
+            url: that.globalData.globalUrl+'login.php',
+            data: {
+              code: res.code,
+            },
+            method: 'GET',
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function (res) {
+              wx.setStorageSync('openid', res.data);//将获取信息写入本地缓存  
+            }
+          })
+        }
       }
     })
     // 获取用户信息
@@ -34,6 +50,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    globalUrl: 'https://www.collegelastkm.com/'
   }
 })

@@ -1,1 +1,76 @@
-/* pages/approve/approve.wxss */
+
+page {
+  font-size: 32rpx;
+  background-color: #f2f2f2;
+}
+
+input {
+  /*position: relative;*/
+  height: 96rpx;
+  line-height: 96rpx; 
+}
+
+
+/*总体布局*/
+
+.edit-content {
+  border-top: 20rpx solid #f2f2f2;
+}
+
+/*每条数据布局*/
+
+.section {
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  align-self: center;/*这行代码好像也没有用*/
+  padding-left: 40rpx;
+  border-bottom: 4rpx solid #f2f2f2;
+  height: 96rpx;
+  line-height: 96rpx;
+}
+
+.section__title {
+  margin-right: 20rpx;
+  flex: 0 0 20%;
+  font-weight: bold;
+}
+
+.input-view-address {
+  flex: 1;
+}
+
+/*保存按钮*/
+
+.btnsub {
+  font-size: 36rpx;
+  width: 470rpx;
+  margin: 104rpx auto 0;
+  border-radius: 50rpx;
+  background-color: #1AAD19;
+  color: #fff;
+}
+
+.idPhoto {
+  margin-top: 9rpx;
+  margin-bottom: 9rpx;
+  margin-right: 9px;
+  width: 77px;
+  height: 77px;
+  border:1px solid #d9d9d9;
+}
+.idPhotoImage {
+  width: 77px;
+  height: 77px;
+}
+#idCardContent{
+  margin-top: 23px;
+  text-align: left;
+}
+#idCardImage {
+  height: 200rpx;
+}
+#input_box {
+  margin-top: 9rpx;
+  margin-bottom: 9rpx;
+}

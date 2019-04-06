@@ -1,0 +1,84 @@
+/* pages/control/control.wxss */
+.whole {
+  height: 100%;
+}
+.nav_bar {
+  display: flex;
+  border-bottom: 2rpx solid #f2f2f2;
+  top: 0;
+  width: 100%;
+}
+
+.nav_item {
+  margin: 13px 0;
+  text-align: center;
+  flex: 1;
+  display: block;
+  border-left: 2rpx solid #f2f2f2;
+  width: auto;
+  word-wrap: normal;
+  font-size: 15px;
+}
+.nav_content {
+  color: #8d8d8d;
+  font-size: 25rpx;
+}
+.control_cell {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2rpx solid #f2f2f2;
+  font-size: 30rpx;
+}
+.ticket_value {
+  width: 10%;
+}
+.ticker_value_input input{
+  width: 40px;
+  border: 1rpx solid #f2f2f2;
+}
+.convert_code {
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  flex: 4;
+}
+.control_word {
+  margin-right: 15rpx;
+}
+.order_picker {
+  flex: 2;
+  margin-left: 14rpx;
+  margin-right: 14rpx;
+}
+
+
+.salary_cell {
+  padding: 10px;
+  border-bottom: 2rpx solid #f2f2f2;
+  font-size: 30rpx;
+}
+.salary_word {
+  margin-bottom: 10rpx;
+}
+.salary_content {
+  display: flex;
+  align-items: center;
+}
+.inquire_user_input {
+  flex:4;
+}
+.user_name {
+  width: 140px;
+  height: 40rpx;
+  border: 1rpx #f2f2f2 solid;
+}
+.salary_content input {
+  width: 80px;
+  height: 40rpx;
+  border: 1rpx #f2f2f2 solid;
+}
+.salary_picker {
+  flex: 2;
+  margin-left: 14rpx;
+  margin-right: 14rpx;
+}

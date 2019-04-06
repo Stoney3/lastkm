@@ -1,2 +1,50 @@
 <!--pages/want_order/want_order.wxml-->
-<text>pages/want_order/want_order.wxml</text>
+<view class="whole">
+  <view class="nav_bar" style='height:{{nav_bar_height}}px;'>
+    <view class="nav_bar_item">
+      <picker mode="date" start="{{start_date}}" end="{{end_date}}"  bindchange='datechange'>
+        <view class="nav_bar_title">{{tabs[0]}}</view>
+        <view class="nav_bar_content">{{contents[0]}}</view>
+      </picker>
+    </view>
+    <view class="nav_bar_item">
+      <picker range="{{times}}" bindchange="timechange">
+        <view class="nav_bar_title">{{tabs[1]}}</view>
+        <view class="nav_bar_content">{{contents[1]}}</view>
+      </picker>
+    </view>
+    <view class="nav_bar_item">
+      <picker range="{{apartments}}"  bindchange='apartmentchange'>
+        <view class="nav_bar_title">{{tabs[2]}}</view>
+        <view class="nav_bar_content">{{contents[2]}}</view>
+      </picker>
+    </view>
+    <view class="nav_bar_item">
+      <picker range="{{volume}}" bindchange='volumechange'>
+        <view class="nav_bar_title">{{tabs[3]}}</view>
+        <view class="nav_bar_content">{{contents[3]}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <scroll-view class="scroll_items" scroll-y
+    style="height: {{scroll_height}}px;">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
+        <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+        <view class="weui-cell__bd">{{item.name}}</view>
+        <view class="weui-cell__hd weui-check__hd_in-checkbox">
+          <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+          <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}"></icon>
+        </view>
+      </label>
+    </checkbox-group>
+  </scroll-view>
+
+  <view class="bottom_bar" style='height:{{bottom_bar_height}}px;'>
+    <view wx:if="{{if_approve > 0}}" class="week_num">您本周还可以领取{{week_num}}件</view>
+    <view wx:else class="week_num">您还未通过认证!</view>
+    <button class="weui-btn mini-btn select_all" hover-class="button-hover" size="mini" type="default" bindtap="affirmAll">全选</button>
+    <button class="weui-btn mini-btn " id="ensure_item" hover-class='button-hover' size="mini" type="primary" bindtap="affirm">确定</button>
+  </view>
+</view>

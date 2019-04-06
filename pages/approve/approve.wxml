@@ -1,2 +1,75 @@
-<!--pages/approve/approve.wxml-->
-<text>pages/approve/approve.wxml</text>
+<!--详细地址-->
+<view class="edit-content">
+  <form bindsubmit="formSubmit">
+
+    <!--收件人姓名-->
+    <view class="section">
+
+      <!--真实姓名文字的长度限制为max为6-->
+      <view class="section__title">姓名</view>
+      <view class="input-view">
+        <input type="text" name="trueName" placeholder="真实姓名" maxlength="18" value="{{valueName}}" bindinput="nameChange" />
+      </view>
+    </view>
+    <!--学号-->
+    <view class="section">
+      <view class="section__title">学号</view>
+
+      <view class="input-view">
+        <input type='number' name="trueId" placeholder="学号" maxlength='12' value="{{valueId}}" bindinput='idChange'/>
+      </view>
+    </view>
+    <!--联系方式-->
+    <view class="section">
+      <view class="section__title">电话</view>
+
+      <!--联系方式的长度限制为11-->
+      <view class="input-view">
+        <input type="number" name="truePhone" placeholder="联系方式" maxlength="11" value="{{valuePhone}}" bindinput="phoneChange"/>
+      </view>
+    </view>
+    
+    <!--选择地区-->
+    <view class="section">
+      <view class="section__title">学校</view>
+      <view class="input-view">
+        <picker mode="multiSelector" name="trueSchool" range="{{school}}" value="valueIndex" bindchange='bindMultiPickerChange' bindcolumnchange="bindMultiPickerColumnChange">
+        <view>{{valueCollege}}{{valueBranch}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!--楼宇号-->
+    <view class="section">
+      <view class="section__title">楼宇号</view>
+      <view class="input-view-address">
+
+        <!--楼宇号最多两位-->
+        <input value="{{valueApartment}}" placeholder="0" name="trueApartment" type="number" maxlength="2" bindinput="addressChange"/>
+      </view>
+    </view>
+
+    <!--宿舍号最多四位-->
+    <view class="section">
+      <view class="section__title">宿舍号</view>
+      <view class="input-view">
+
+        <input value="{{valueRoom}}" type="number" placeholder="000" maxlength="4" name="trueRoom" />
+      </view>
+    </view>
+    <view>
+    </view>
+
+    <view class="section" id="idCardImage">
+      <view class="section__title" id="idCardContent"><view>学生卡</view></view>
+      <view class="idPhoto" bindtap="preViewImage">
+        <image class="idPhotoImage"src="{{file}}" mode="scaleToFill"></image>
+      </view>
+      <view class="weui-uploader__input-box" id="input_box">
+        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+      </view>
+    </view>
+    <!--确定按钮-->
+    <button class="btnsub" formType="submit"> 确定 </button>
+  </form>
+</view>

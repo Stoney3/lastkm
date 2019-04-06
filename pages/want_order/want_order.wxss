@@ -1,1 +1,49 @@
 /* pages/want_order/want_order.wxss */
+.whole {
+  height: 100%;
+}
+.nav_bar {
+  display: flex;
+  border-bottom: 2rpx solid #f2f2f2;
+  top: 0;
+  width: 100%;
+}
+
+.nav_bar_item {
+  margin: 13px 0;
+  text-align: center;
+  flex: 1;
+  display: block;
+  border-left: 2rpx solid #f2f2f2;
+  width: auto;
+  word-wrap: normal;
+  font-size: 15px;
+}
+
+.nav_bar_content {
+  color: #8d8d8d;
+  font-size: 25rpx;
+}
+
+.scroll_items {
+  font-size: 35rpx;
+}
+
+.bottom_bar {
+  display: flex;
+  align-items: center;
+  border-top: 2rpx solid #f2f2f2;
+  height: auto;
+}
+.week_num {
+  color: #8d8d8d;
+  font-size: 30rpx;
+  flex: 4;
+  margin-left: 15px;
+}
+.select_all {
+ margin: auto 15rpx;
+}
+#ensure_item{
+ margin: auto 15rpx;
+}

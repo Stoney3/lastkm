@@ -5,17 +5,18 @@
     "pages/home/home",
     "pages/agreement/agreement",
     "pages/order/order",
-    "pages/replace/replace",
     "pages/edit/edit",
     "pages/convert/convert",
     "pages/collect_order/collect_order",
     "pages/want_order/want_order",
     "pages/sharing_ticket/sharing_ticket",
     "pages/place_order/place_order",
-    "pages/buy/buy",
+    "pages/button/button",
     "pages/approve/approve",
-    "pages/adress_list/adress_list",
-    "pages/create_code/create_code"
+    "pages/service/service",
+    "pages/place_order_detail/place_order_detail",
+    "pages/password/password",
+    "pages/control/control"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,7 +26,7 @@
   },
   "tabBar": {
     "color": "#707070",
-    "selectedColor": "#66FF66",
+    "selectedColor": "#32cd32",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [

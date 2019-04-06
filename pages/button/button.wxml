@@ -1,0 +1,10 @@
+<!--pages/buy/buy.wxml-->
+<view class="whole_page">
+  <view>
+    <image class="buy_content" src="../../images/buy_content.png"></image>
+  </view>
+
+  <view class="buy_image_cell">
+  <image bindtouchstart='timestart' bindtouchend='timeend' bindtap='saveImg' class="buy_image" src="../../images/buy.jpg"></image>
+  </view>
+</view>

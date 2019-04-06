@@ -1,2 +1,101 @@
-<!--pages/collect_order/collect_order.wxml-->
-<text>pages/collect_order/collect_order.wxml</text>
+<!--pages/place_order/place_order.wxml-->
+<!--template-->
+<template name="each_item">
+                    <image class="item_image" src="{{item.product_image}}" bindtap="preview" data-src="{{item.product_image}}"/>
+                    <view class="item_content">
+                      <view class="first_clomun">
+                      <view class="item_content_time">{{item.target_date}}</view>
+                      <view class="item_content_code">{{item.code}}</view>
+                      <view class="item_content_user">{{item.name}}</view>  </view>
+                      <view class="second_clomun">
+                      <view class="item_content_time">{{item.target_time}}</view>
+                      <view class="item_content_code">{{item.apartment}}#{{item.room}}   {{item.volume}}</view>
+                      <text class="item_content_user" selectable='true'>{{item.phone}}</text>
+                      </view>
+                    </view>
+                    <view>
+                      <button class="item_start weui-btn mini-btn" hover-class="button-hover" size="mini" type='primary' data-order_code ="{{item.order_code}}" bindtap="seeDetail">查看</button>
+                    </view>
+
+</template>
+<!--template end-->
+
+<!--template arrive start-->
+<template name="each_item_send">
+                    <image wx:if="{{item.show}}"class="item_image" src="{{item.product_image}}" bindtap="preview" data-src="{{item.product_image}}"/>
+                    <view wx:if="{{item.show}}" class="item_content">
+                      <view class="first_clomun">
+                      <view class="item_content_time">{{item.target_date}}</view>
+                      <view class="item_content_code">{{item.code}}</view>
+                      <view class="item_content_user">{{item.name}}</view>  </view>
+                      <view class="second_clomun">
+                      <view class="item_content_time">{{item.target_time}}</view>
+                      <view class="item_content_code">{{item.apartment}}#{{item.room}}   {{item.volume}}</view>
+                      <text class="item_content_user" selectable='true'>{{item.phone}}</text>
+                      </view>
+                    </view>
+                    <view wx:if="{{item.show}}">
+                      <button class="item_start weui-btn mini-btn" hover-class="button-hover" size="mini" type='primary' data-order_code="{{item.order_code}}" bindtap='arriveOrder'>送达</button>
+                    </view>
+
+</template>
+<!--template arrive end-->
+
+<view>
+    <view>
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}"  bindtap="tabClick">
+                        <view class="weui-navbar__title" id="navbar_single_item">
+                          <view>{{item}}</view>
+                          <view class="navbar_num">{{navbar_num[index]}}</view>
+                        </view>                 
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                  <!--选项一的内容-->
+                  <view class="order_item" wx:for="{{start_items}}">
+                     <image wx:if="{{item.show}}" class="item_image" src="{{item.product_image}}" bindtap="preview" data-src="{{item.product_image}}"/>
+                    <view wx:if="{{item.show}}" class="item_content">
+                      <view class="first_clomun">
+                      <view class="item_content_time">{{item.target_date}}</view>
+                      <view class="item_content_code">{{item.code}}</view>
+                      <view class="item_content_user">{{item.name}}</view>  </view>
+                      <view class="second_clomun">
+                      <view class="item_content_time">{{item.target_time}}</view>
+                      <view class="item_content_code">{{item.apartment}}#{{item.room}}   {{item.volume}}</view>
+                      <text class="item_content_user" selectable='true'>{{item.phone}}</text>
+                      </view>
+                    </view>
+                    <view wx:if="{{item.show}}" id="double_btn">
+                      <button class="item_start weui-btn mini-btn" hover-class="button-hover" size="mini" type='warn' data-order_code ="{{item.order_code}}" bindtap="chargeback">退领</button>
+                      <button class="item_start weui-btn mini-btn" id="get" hover-class="button-hover" size="mini" type='primary' data-order_code ="{{item.order_code}}" bindtap="sendOrder">领件</button>
+                    </view>
+                  </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <!--选项二中的内容-->
+                  <view class="order_item" wx:for="{{send_items}}">
+                     <template is="each_item_send" data="{{item}}"></template>
+                  </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                <!--选项三中的内容-->
+                  <view class="order_item" wx:for="{{arrive_items}}">
+                    <template is="each_item" data="{{item}}"></template>
+                  </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+                <!--选项四中的内容-->
+                  <view class="order_item" wx:for="{{end_items}}">
+                    <template is="each_item" data="{{item}}"></template>
+                  </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,51 @@
+<!--pages/place_order_detail/place_order_detail.wxml-->
+<view class="whole_item">
+  <view class="item">
+    <view class="item_title">订单编号</view>
+    <text class="item_content" selectable='true'>{{order_code}}</text>
+  </view>
+  <view class="item">
+    <view class="item_title">运送费用</view>
+    <view class="item_content">{{product_cost}}张</view>
+  </view>
+  <view class="item">
+    <view class="item_title">派送人员</view>
+    <view class="item_content">{{express_role}}</view>
+  </view>
+  
+  <view class="item">
+    <view class="item_title">联系方式</view>
+    <text class="item_content" selectable='true'>{{phone_num}}</text>
+  </view>
+  <view class="item">
+    <view class="item_title">目标时间</view>
+    <view class="item_content">{{target_time}}</view>
+  </view>
+  <view class="item">
+    <view class="item_title">创建时间</view>
+    <view class="item_content">{{start_time}}</view>
+  </view>
+  <view class="item">
+    <view class="item_title">接单时间</view>
+    <view class="item_content">{{accept_time}}</view>
+  </view>
+  <view class="item">
+    <view class="item_title">领件时间</view>
+    <view class="item_content">{{send_time}}</view>
+  </view>
+  <view class="item">
+    <view class="item_title">送达时间</view>
+    <view class="item_content">{{arrive_time}}</view>
+  </view>
+  <view class="item">
+    <view class="item_title">收货时间</view>
+    <view class="item_content">{{end_time}}</view>
+  </view>
+  <view class="item" wx:if="{{is_convert}}">
+    <view class="item_title">兑换码</view>
+    <text class="item_content" selectable='true'>{{convert_code}}</text>
+  </view>
+  <view class="item_btn">
+    <button class="weui-btn" hover-class="button-hover" type="primary"  role="button" bindtap="ran">然</button>
+  </view>
+</view>

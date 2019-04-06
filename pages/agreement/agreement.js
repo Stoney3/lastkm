@@ -1,10 +1,12 @@
 // pages/agreement/agreement.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    agreement: ''
 
   },
 
@@ -12,7 +14,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    wx.request({
+      url: app.globalData.globalUrl+'onload_agreement.php',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        that.setData({
+          agreement: res.data
+        })
+      }
+    })
   },
 
   /**

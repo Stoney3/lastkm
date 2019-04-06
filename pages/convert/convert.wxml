@@ -1,2 +1,14 @@
 <!--pages/convert/convert.wxml-->
-<text>pages/convert/convert.wxml</text>
+<view class="container_cell">
+    <form bindsubmit="bindSave">
+    <view class="form-box">
+        <view class="row-wrap">
+            <view class="label">兑换码</view>
+            <view class="label-right">
+                <input name="amount" class="input" type="text" placeholder="请输入兑换码" value="{{convert_code}}"/>
+            </view>
+        </view>
+    </view>
+    <button type="primary" class="save-btn" formType="submit">立即兑换</button>
+    </form>
+</view>

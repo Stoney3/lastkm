@@ -1,2 +1,44 @@
 <!--pages/sharing_ticket/sharing_ticket.wxml-->
-<text>pages/sharing_ticket/sharing_ticket.wxml</text>
+<view class="asset">
+  <view class='item'>    
+    <view>可用余额(张)</view>
+    <view>{{balance}}</view>
+  </view>
+  <view class='item'>    
+    <view>累计消耗(张)</view>
+    <view>{{use}}</view>
+  </view>
+  <view class='item right'>    
+    <view>累计兑换(张)</view>
+    <view>{{totalConvert}}</view>
+  </view>
+</view>
+<view class='btn-view'>
+  
+    <button
+      class="btn"
+      type="default"
+      size="mini"
+      form-type="submit"
+      hover-class="btn-hover"
+      plain="true" 
+      bindtap="toBuy"
+      wx:if="{{button_show}}"
+      >
+      {{button_word}}
+    </button>
+ 
+    <button
+      class='btn bth-right'
+      type="default"
+      size="mini"
+      form-type="submit"
+      hover-class="btn-hover"
+      plain="true"
+      bindtap="toConvert"
+       >
+      兑换
+    </button>
+  
+</view>
+
